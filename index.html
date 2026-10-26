@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maikel's Kitchen Tampa | Comida cubana y jugos naturales</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a6b3c'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='26' font-weight='bold' fill='%23f7b500' text-anchor='middle'%3EMK%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Maikel's Kitchen, restaurante cubano en Tampa: comida cubana, cocina latina y americana, jugos naturales. 3864 W Waters Ave. Llama al (813) 831-1600.">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff8e7;color:#222;font-family:Arial,Helvetica,sans-serif}
+.ribbon{background:#1a6b3c;color:#fff;padding:10px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:bold}
+.ribbon a{color:#f7b500;text-decoration:none}
+header{position:sticky;top:0;background:#fff;z-index:20;box-shadow:0 3px 14px rgba(0,0,0,.15);border-bottom:5px solid #f7b500}
+.head{max-width:760px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-family:Georgia,serif;font-size:30px;font-weight:900;color:#14532d;line-height:1}.brand small{display:block;font-family:Arial;font-size:13px;letter-spacing:2px;color:#b45309}
+.lang button{border:2px solid #1a6b3c;background:#fff;padding:9px 14px;border-radius:999px;font-weight:bold;cursor:pointer}
+.lang button.on{background:#1a6b3c;color:#fff}
+nav{max-width:760px;margin:0 auto;padding:0 16px 12px;display:flex;gap:18px;overflow-x:auto;white-space:nowrap;font-weight:bold}
+nav a{color:#14532d;text-decoration:none}
+.hero{background:linear-gradient(135deg,#14532d,#1a6b3c 55%,#f7b500 130%);color:#fff;padding:42px 16px 50px}
+.hero-in{max-width:760px;margin:0 auto}
+.hero h1{font-family:Georgia,serif;font-size:52px;line-height:1.05;margin:8px 0 12px}.hero h1 em{color:#f7b500;font-style:normal}
+.hero p{font-size:19px;line-height:1.6;max-width:640px}
+.btn{display:inline-block;background:#f7b500;color:#14532d;padding:15px 26px;border-radius:999px;font-weight:900;text-decoration:none;margin:6px 6px 6px 0;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.btn.out{background:transparent;color:#fff;border:2px solid #fff}
+.btn.green{background:#14532d;color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:10px 16px 48px}
+h2{font-family:Georgia,serif;font-size:34px;color:#14532d;margin:44px 0 10px}h2 span{color:#d97706}
+p,li{font-size:17px;line-height:1.65}
+.card{background:#fff;border:2px solid #f0d488;border-top:8px solid #1a6b3c;border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.foto{width:100%;border-radius:16px;border:3px solid #f7b500;display:block;margin:14px 0}
+.foto-cap{font-size:14px;color:#555;text-align:center;margin:-6px 0 18px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gal figure{margin:0}.gal img{width:100%;height:190px;object-fit:cover;border-radius:14px;border:2px solid #f0d488}.gal figcaption{font-size:14px;color:#555;text-align:center;padding:6px}
+.menu{display:table;width:100%;table-layout:fixed;padding:12px 0;border-bottom:1px dashed #d9c27a}.menu span{display:table-cell}.menu span:last-child{text-align:right;width:72px;white-space:nowrap}.menu b{color:#14532d}.menu span{font-weight:900;color:#b45309;white-space:nowrap}
+.note{background:#fff3c4;border:2px solid #f7b500;border-radius:14px;padding:16px}
+.contact{background:#14532d;color:#fff;border-radius:20px;padding:24px;display:grid;grid-template-columns:1fr 150px;gap:18px;align-items:center}
+.contact a{color:#f7b500}.contact img{width:140px;height:140px;background:#fff;padding:6px;border-radius:12px}
+.hours{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
+.hours td{padding:10px;border-bottom:1px solid #eee;color:#222}
+footer{max-width:760px;margin:0 auto;padding:20px 16px 40px;text-align:center;color:#666;font-size:14px;line-height:1.7}
+@media(max-width:640px){.hero h1{font-size:36px}.grid,.contact{grid-template-columns:1fr}}
+@media print{.wrap,.hero-in,.head,nav{max-width:680px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>📞 <a href="tel:+18138311600">(813) 831-1600</a></span><span data-es="Abierto hoy · 7 AM – 9 PM" data-en="Open today · 7 AM – 9 PM">Abierto hoy · 7 AM – 9 PM</span></div>
+<header><div class="head">
+<div class="brand">Maikel's <span style="color:#d97706">KITCHEN</span><small data-es="&amp; JUGOS NATURALES" data-en="&amp; NATURAL JUICES">&amp; JUGOS NATURALES</small></div>
+<div class="lang"><button id="btn-es" class="on" onclick="setLang('es')">ES</button> <button id="btn-en" onclick="setLang('en')">EN</button></div>
+</div><nav>
+<a href="#menu" data-es="Menú" data-en="Menu">Menú</a>
+<a href="#nosotros" data-es="El local" data-en="About">El local</a>
+<a href="#resenas" data-es="Reseñas" data-en="Reviews">Reseñas</a>
+<a href="#fotos" data-es="Fotos" data-en="Photos">Fotos</a>
+<a href="#catering" data-es="Catering" data-en="Catering">Catering</a>
+<a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+</nav></header>
+
+<section class="hero"><div class="hero-in">
+<p data-es="RESTAURANTE CUBANO EN TAMPA" data-en="CUBAN RESTAURANT IN TAMPA">RESTAURANTE CUBANO EN TAMPA</p>
+<h1 data-es="Sabor cubano, <em>jugos naturales</em> y porciones de verdad." data-en="Cuban flavor, <em>natural juices</em> and generous portions.">Sabor cubano, <em>jugos naturales</em> y porciones de verdad.</h1>
+<p data-es="Comida cubana, latina y americana en Waters Avenue: sándwich cubano, ropa vieja, chicharrón, empanadas, arroces y jugos recién hechos. Come en el local, recoge tu pedido o pide por delivery." data-en="Cuban, Latin and American food on Waters Avenue: Cuban sandwich, ropa vieja, chicharrón, empanadas, rice dishes and fresh juices. Dine in, pick up or order delivery.">Comida cubana, latina y americana en Waters Avenue: sándwich cubano, ropa vieja, chicharrón, empanadas, arroces y jugos recién hechos. Come en el local, recoge tu pedido o pide por delivery.</p>
+<a class="btn" href="tel:+18138311600" data-es="📞 Llamar: (813) 831-1600" data-en="📞 Call: (813) 831-1600">📞 Llamar: (813) 831-1600</a>
+<a class="btn out" href="#menu" data-es="Ver el menú ↓" data-en="See the menu ↓">Ver el menú ↓</a>
+<p><strong>4.1 ★</strong> <span data-es="2,729 reseñas en Google" data-en="2,729 Google reviews">2,729 reseñas en Google</span></p>
+<img class="foto" src="fotos/fachada-pro.jpg" alt="Fachada real de Maikel's Kitchen, 3864 W Waters Ave">
+<p class="foto-cap" style="color:#e8f5e9" data-es="Foto real del local: fachada amarilla con el logo “Maikel's KITCHEN — Natural Juices”." data-en="Real photo of the restaurant: yellow facade with the “Maikel's KITCHEN — Natural Juices” logo.">Foto real del local: fachada amarilla con el logo “Maikel's KITCHEN — Natural Juices”.</p>
+</div></section>
+
+<div class="wrap">
+<div class="note"><b data-es="⚠️ Precios por confirmar" data-en="⚠️ Prices to confirm">⚠️ Precios por confirmar</b>
+<p data-es="Los precios del menú de esta demo vienen de Uber Eats y están etiquetados como por confirmar con el dueño. No son precios oficiales del local hasta que él los confirme." data-en="Menu prices in this demo come from Uber Eats and are marked as to confirm with the owner. They are not the restaurant's official prices until he confirms them.">Los precios del menú de esta demo vienen de Uber Eats y están etiquetados como por confirmar con el dueño. No son precios oficiales del local hasta que él los confirme.</p></div>
+
+<h2 id="menu" data-es="Menú <span>destacado</span>" data-en="Featured <span>menu</span>">Menú <span>destacado</span></h2>
+<p data-es="Una selección del menú. Precios de Uber Eats, por confirmar con el dueño." data-en="A selection from the menu. Uber Eats prices, to confirm with the owner.">Una selección del menú. Precios de Uber Eats, por confirmar con el dueño.</p>
+<div class="grid">
+<div class="card"><h3 data-es="🥪 Sándwiches" data-en="🥪 Sandwiches">🥪 Sándwiches</h3>
+<div class="menu"><span data-es="Sándwich cubano regular" data-en="Regular Cuban sandwich">Sándwich cubano regular</span><span>$9.99*</span></div>
+<div class="menu"><span data-es="Media noche" data-en="Media noche">Media noche</span><span>$9.99*</span></div>
+<div class="menu"><span data-es="Sándwich cubano especial" data-en="Special Cuban sandwich">Sándwich cubano especial</span><span>$12.99*</span></div>
+<div class="menu"><span data-es="Sándwich Tampa" data-en="Tampa sandwich">Sándwich Tampa</span><span>$12.99*</span></div>
+<div class="menu"><span data-es="Sándwich Maikel's Kitchen" data-en="Maikel's Kitchen sandwich">Sándwich Maikel's Kitchen</span><span>$14.99*</span></div>
+<div class="menu"><span data-es="Pan con croqueta" data-en="Croquette bread">Pan con croqueta</span><span>$6.99*</span></div>
+<div class="menu"><span data-es="Croqueta preparada" data-en="Croqueta preparada">Croqueta preparada</span><span>$7.99*</span></div>
+</div>
+<div class="card"><h3 data-es="🥤 Jugos naturales y batidos" data-en="🥤 Natural juices and shakes">🥤 Jugos naturales y batidos</h3><p style="font-size:15px;color:#555" data-es="Sabores: mango, piña, guayaba, tamarindo, maracuyá, guanábana, sandía, mora, limonada; batidos de mamey, guayaba, mango, banana, chocolate, maracuyá, guanábana, trigo y papaya." data-en="Flavors: mango, pineapple, guava, tamarind, passion fruit, soursop, watermelon, blackberry, lemonade; shakes with mamey, guava, mango, banana, chocolate, passion fruit, soursop, wheat and papaya.">Sabores: mango, piña, guayaba, tamarindo, maracuyá, guanábana, sandía, mora, limonada; batidos de mamey, guayaba, mango, banana, chocolate, maracuyá, guanábana, trigo y papaya.</p>
+<div class="menu"><span data-es="Jugo natural" data-en="Natural juice">Jugo natural</span><span>$5.99*</span></div>
+<div class="menu"><span data-es="Batido" data-en="Shake">Batido</span><span>$8.99*</span></div>
+<div class="menu"><span data-es="Colada / cortadito" data-en="Colada / cortadito">Colada / cortadito</span><span>$3.99*</span></div>
+<div class="menu"><span data-es="Café con leche" data-en="Café con leche">Café con leche</span><span>$3.99–$4.99*</span></div>
+</div>
+<div class="card"><h3 data-es="🥟 Deli" data-en="🥟 Deli">🥟 Deli</h3>
+<div class="menu"><span data-es="Empanadas: carne, guayaba y queso, pollo, jamón y queso" data-en="Empanadas: beef, guava and cheese, chicken, ham and cheese">Empanadas: carne, guayaba y queso, pollo, jamón y queso</span><span>$4.99*</span></div>
+<div class="menu"><span data-es="2 croquetas de queso o de pollo" data-en="2 cheese or chicken croquettes">2 croquetas de queso o de pollo</span><span>$3.99*</span></div>
+</div>
+<div class="card"><h3 data-es="🍮 Postres caseros" data-en="🍮 Homemade desserts">🍮 Postres caseros</h3>
+<div class="menu"><span data-es="Arroz con leche, ensalada fría, dulce de papaya o toronja" data-en="Rice pudding, cold salad, papaya or grapefruit dessert">Arroz con leche, ensalada fría, dulce de papaya o toronja</span><span>$5.99–$12.49*</span></div>
+<p data-es="* Precio de Uber Eats, por confirmar con el dueño." data-en="* Uber Eats price, to confirm with the owner.">* Precio de Uber Eats, por confirmar con el dueño.</p>
+</div>
+<div class="card"><h3 data-es="🍛 Platos completos" data-en="🍛 Full plates">🍛 Platos completos</h3>
+<p style="font-size:15px;color:#555" data-es="Los favoritos de la casa. Precios por confirmar con el dueño." data-en="House favorites. Prices to confirm with the owner.">Los favoritos de la casa. Precios por confirmar con el dueño.</p>
+<div class="menu"><span data-es="Completa de masas de cerdo frita" data-en="Fried pork chunks meal">Completa de masas de cerdo frita</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Completa de chicharrón de cerdo" data-en="Pork skin meal">Completa de chicharrón de cerdo</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Completa de ropa vieja" data-en="Shredded beef meal">Completa de ropa vieja</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Arroz con carne de puerco" data-en="Rice with pork">Arroz con carne de puerco</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Arroz frito con pollo" data-en="Fried rice with chicken">Arroz frito con pollo</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Arroz con pollo a la chorrera" data-en="Chicken rice a la chorrera">Arroz con pollo a la chorrera</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Oxtails con congrí y tostones" data-en="Oxtails with congri and tostones">Oxtails con congrí y tostones</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Sándwich de frita cubana" data-en="Cuban frita sandwich">Sándwich de frita cubana</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Sándwich con lechón" data-en="Roast pork sandwich">Sándwich con lechón</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+<div class="menu"><span data-es="Tamal en hoja" data-en="Tamal in leaf">Tamal en hoja</span><span data-es="Por confirmar" data-en="To confirm">Por confirmar</span></div>
+</div>
+</div>
+
+<h2 id="nosotros" data-es="El <span>local</span>" data-en="The <span>place</span>">El <span>local</span></h2>
+<div class="card"><p data-es="Edificio amarillo con detalles verdes en Waters Avenue, con mesas al aire libre, drive thru y estacionamiento al frente. Cocina cubana, latina y americana, jugos naturales y servicio para llevar y delivery." data-en="Yellow building with green details on Waters Avenue, with outdoor tables, drive thru and parking in front. Cuban, Latin and American cuisine, natural juices, takeout and delivery.">Edificio amarillo con detalles verdes en Waters Avenue, con mesas al aire libre, drive thru y estacionamiento al frente. Cocina cubana, latina y americana, jugos naturales y servicio para llevar y delivery.</p></div>
+<h2 id="fotos" data-es="Fotos <span>reales</span>" data-en="Real <span>photos</span>">Fotos <span>reales</span></h2>
+<p data-es="Fotos reales del local y de sus platos, tomadas del perfil de Google y de las redes del negocio. El dueño aportará más fotos propias." data-en="Real photos of the restaurant and its dishes, from the Google profile and the business's social pages. The owner will provide more of his own photos.">Fotos reales del local y de sus platos, tomadas del perfil de Google y de las redes del negocio. El dueño aportará más fotos propias.</p>
+<div class="gal">
+<figure><img src="fotos/terraza-pro.jpg" alt="Terraza de Maikel's Kitchen"><figcaption data-es="Terraza con mesas al aire libre" data-en="Outdoor terrace seating">Terraza con mesas al aire libre</figcaption></figure>
+<figure><img src="fotos/masas-cerdo-pro.jpg" alt="Masas de cerdo frita con congrí"><figcaption data-es="Masas de cerdo frita con congrí" data-en="Fried pork chunks with congri">Masas de cerdo frita con congrí</figcaption></figure>
+<figure><img src="fotos/ropa-vieja-pro.jpg" alt="Ropa vieja con arroz frito"><figcaption data-es="Ropa vieja con arroz frito" data-en="Ropa vieja with fried rice">Ropa vieja con arroz frito</figcaption></figure>
+<figure><img src="fotos/sandwich-cubano-pro.jpg" alt="Sándwich cubano"><figcaption data-es="Sándwich cubano" data-en="Cuban sandwich">Sándwich cubano</figcaption></figure>
+<figure><img src="fotos/tamal-pro.jpg" alt="Tamal en hoja"><figcaption data-es="Tamal en hoja" data-en="Tamal in leaf">Tamal en hoja</figcaption></figure>
+<figure><img src="fotos/pollo-mofongo-pro.jpg" alt="Pollo asado con mofongo y arroz con frijoles"><figcaption data-es="Pollo asado con mofongo y arroz con frijoles" data-en="Roast chicken with mofongo and rice and beans">Pollo asado con mofongo y arroz con frijoles</figcaption></figure>
+<figure><img src="fotos/ropa-vieja-arroz-frito-pro.jpg" alt="Ropa vieja con arroz frito"><figcaption data-es="Ropa vieja con arroz frito" data-en="Ropa vieja with fried rice">Ropa vieja con arroz frito</figcaption></figure>
+<figure><img src="fotos/pollo-moros-yuca-pro.jpg" alt="Pollo asado con moros y yuca"><figcaption data-es="Pollo asado con moros y yuca" data-en="Roast chicken with moros and yuca">Pollo asado con moros y yuca</figcaption></figure>
+<figure><img src="fotos/sandwich-cubano-corte-pro.jpg" alt="Sándwich cubano en corte"><figcaption data-es="Sándwich cubano en corte" data-en="Cuban sandwich, cut view">Sándwich cubano en corte</figcaption></figure>
+</div>
+
+<h2 id="resenas" data-es="Reseñas <span>reales</span>" data-en="Real <span>reviews</span>">Reseñas <span>reales</span></h2>
+<div class="card"><p><strong style="font-size:32px">4.1 ★</strong></p><p data-es="2,729 reseñas en Google (verificado el 25 de octubre de 2026). No publicamos textos de reseñas que no pudimos verificar palabra por palabra, ni inventamos reseñas nuevas." data-en="2,729 Google reviews (verified October 25, 2026). We do not publish review texts we could not verify word for word, and we do not invent new reviews.">2,729 reseñas en Google (verificado el 25 de octubre de 2026). No publicamos textos de reseñas que no pudimos verificar palabra por palabra, ni inventamos reseñas nuevas.</p><a class="btn green" href="https://maps.app.goo.gl/CUfCPYkpvY9dFzMq7" data-es="Ver perfil en Google" data-en="See Google profile">Ver perfil en Google</a></div>
+<p data-es="Web actual del negocio: el perfil de Google lista maikels-kitchen.shop, una página automática genérica sin menú con precios ni pedidos. Esta demo es la propuesta de web propia real." data-en="The business's current web: its Google profile lists maikels-kitchen.shop, an automatic generic page with no priced menu or ordering. This demo is the proposed real own website.">Web actual del negocio: el perfil de Google lista maikels-kitchen.shop, una página automática genérica sin menú con precios ni pedidos. Esta demo es la propuesta de web propia real.</p>
+
+<h2 id="catering" data-es="Catering <span>para eventos</span>" data-en="Catering <span>for events</span>">Catering <span>para eventos</span></h2>
+<div class="card"><p data-es="¿Fiesta, reunión familiar o evento de empresa? Maikel's Kitchen ya hace catering: sus clientes lo piden para celebraciones, con las porciones generosas de la casa. Pide tu catering por teléfono y confirma menú, cantidades y entrega o recogida." data-en="Party, family gathering or company event? Maikel's Kitchen already does catering: customers order it for celebrations, with the house's generous portions. Order your catering by phone and confirm menu, quantities and delivery or pickup.">¿Fiesta, reunión familiar o evento de empresa? Maikel's Kitchen ya hace catering: sus clientes lo piden para celebraciones, con las porciones generosas de la casa. Pide tu catering por teléfono y confirma menú, cantidades y entrega o recogida.</p>
+<a class="btn green" href="tel:+18138311600" data-es="📞 Catering: (813) 831-1600" data-en="📞 Catering: (813) 831-1600">📞 Catering: (813) 831-1600</a>
+<p data-es="El sistema de reservas y catering MesaReady se configura con el dueño: menús de catering, mínimos, entrega o recogida y disponibilidad. Sin precios de catering publicados hasta confirmarlos con él." data-en="The MesaReady reservation and catering system is configured with the owner: catering menus, minimums, delivery or pickup and availability. No catering prices published until confirmed with him.">El sistema de reservas y catering MesaReady se configura con el dueño: menús de catering, mínimos, entrega o recogida y disponibilidad. Sin precios de catering publicados hasta confirmarlos con él.</p></div>
+
+<section id="contacto" class="contact"><div>
+<h2 style="margin-top:0;color:#fff" data-es="Contacto" data-en="Contact">Contacto</h2>
+<p><b>Maikel's Kitchen</b><br><span data-es="Restaurante cubano · Tampa, Florida" data-en="Cuban restaurant · Tampa, Florida">Restaurante cubano · Tampa, Florida</span><br>📍 3864 W Waters Ave, Tampa, FL 33614<br>📞 <a href="tel:+18138311600">(813) 831-1600</a></p>
+<table class="hours"><tr><td data-es="Todos los días" data-en="Every day">Todos los días</td><td>7 AM – 9 PM</td></tr></table>
+<a class="btn" href="tel:+18138311600" data-es="📞 Llamar ahora" data-en="📞 Call now">📞 Llamar ahora</a>
+</div><div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAFDUlEQVR4nO3dwa0bNxRA0fwgLaSNVJMyXU3aSBHKIqsAdxYEHkPO9zlLQx6NZV0QGIrk1+fz+QX4r19P3wDcSBgQhAFBGBCEAUEYEIQBQRgQhAFBGBCEAUEYEIQBQRgQhAHht9W/8Puff+y4j3F///gr//zp/ldfP/W+u6+zev1Vb/8+PDFiQBAGBGFAEAYEYUAQBgRhQFiex3gy9Vx81dT8wG5T77t7/uG2+1w1Na9ixIAgDAjCgCAMCMKAIAwIwoAwNo/x5Lb1A09umw+ZWjeyep+75zfe8n0wYkAQBgRhQBAGBGFAEAYEYUDYPo9xm6n5gd37Uz2Zmmc4tV7iLYwYEIQBQRgQhAFBGBCEAUEYEH66eYxVu+c3nqzOe9y2nuTtjBgQhAFBGBCEAUEYEIQBQRgQts9jvP15+e5zrN9+7viqt3wfjBgQhAFBGBCEAUEYEIQBQRgQxuYxdj/vv83u/aNWTZ2bsXv/q7cwYkAQBgRhQBAGBGFAEAYEYUD4+nw+p+/hf3Vq36fd19/tLesophgxIAgDgjAgCAOCMCAIA4IwICzPY0zNA0xd/y3P+0/tH7XqLZ/nk6nvpxEDgjAgCAOCMCAIA4IwIAgDwvb1GLufi++eN9i9DuHUuo5Tn9tt+249MWJAEAYEYUAQBgRhQBAGBGFA2H4+xm3zAKeeu5/al2n3+952/vfU/5cRA4IwIAgDgjAgCAOCMCAIA8LYPMap39+f2s9q9TpTTq1n+NnWdRgxIAgDgjAgCAOCMCAIA4IwICzPY9y2PmFqX6ZT+005H+Nft63rMGJAEAYEYUAQBgRhQBAGBGFAOHbO922/759y23kXu912LvgT52PAAGFAEAYEYUAQBgRhQBAGhLFzvm/bF2j3/Map+Yopb/l/mbqOeQwYIAwIwoAgDAjCgCAMCMKAMLav1G3nZH/X+1y9ztTr3/K5TTFiQBAGBGFAEAYEYUAQBgRhQBg753v38+xTv9efmh+47TyQ1evftt7mifMxYCNhQBAGBGFAEAYEYUAQBoTt52O8ZZ+iqfd9svtzu20frSmnzkE3YkAQBgRhQBAGBGFAEAYEYUBYXo+x+zzp28693r1f023nZJ/aJ+rJqXkzIwYEYUAQBgRhQBAGBGFAEAaEsXO+n9y2DmHKqXmSVd913yfrMeAAYUAQBgRhQBAGBGFAEAaEsX2lnpw6p2LVW573v32fqFWn1ucYMSAIA4IwIAgDgjAgCAOCMCBsX49xm1PrPXbPk5y6/qpT+4CZx4ABwoAgDAjCgCAMCMKAIAwIy+djfNff8b99vmL19VP3c2p9yO5zWowYEIQBQRgQhAFBGBCEAUEYEJbnMZ7sfq785Lbn37vv57Z5pKnP89T354kRA4IwIAgDgjAgCAOCMCAIA8LYPMaT77qv0VvWOaxef+r1q3b/e1cZMSAIA4IwIAgDgjAgCAOCMCBsn8e4zdT8w9Q55bvfd9Xu88XfwogBQRgQhAFBGBCEAUEYEIQB4aebx3jylnO4d88znJqvuG2/LCMGBGFAEAYEYUAQBgRhQBAGhO3zGG/5vf6pfZx2r994svt9T60PmWLEgCAMCMKAIAwIwoAgDAjCgDA2j3Hb7+mfnNo/aup+nuw+L/wt6zqmrm/EgCAMCMKAIAwIwoAgDAjCgPD1+XxO3wNcx4gBQRgQhAFBGBCEAUEYEIQBQRgQhAFBGBCEAUEYEIQBQRgQhAHhH30qJUzC6Ow0AAAAAElFTkSuQmCC" alt="QR ubicación"><p data-es="Escanea y abre el perfil oficial de Google" data-en="Scan to open the official Google profile">Escanea y abre el perfil oficial de Google</p></div></section>
+</div>
+<footer>Maikel's Kitchen · (813) 831-1600 · 3864 W Waters Ave, Tampa, FL 33614<br><span data-es="Demo local sin publicar, preparado para la reunión del 26 de octubre de 2026 con New Age Professional Services. Datos verificados en Google el 25 de octubre de 2026. Precios del menú de Uber Eats, por confirmar con el dueño. Con fotos reales del local y de sus platos (perfil de Google y redes); el dueño aportará más fotos propias." data-en="Unpublished local demo, prepared for the October 26, 2026 meeting with New Age Professional Services. Data verified on Google on October 25, 2026. Menu prices from Uber Eats, to confirm with the owner. With real photos of the premises and dishes (Google profile and social pages); the owner will provide more of his own photos.">Demo local sin publicar, preparado para la reunión del 26 de octubre de 2026 con New Age Professional Services. Datos verificados en Google el 25 de octubre de 2026. Precios del menú de Uber Eats, por confirmar con el dueño. Con fotos reales del local y de sus platos (perfil de Google y redes); el dueño aportará más fotos propias.</span></footer>
+<script>
+var LANG='es';
+function setLang(l){LANG=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(function(e){e.innerHTML=e.getAttribute(l==='es'?'data-es':'data-en')});document.getElementById('btn-es').className=l==='es'?'on':'';document.getElementById('btn-en').className=l==='en'?'on':''}
+</script>
+</body>
+</html>
