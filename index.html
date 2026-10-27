@@ -25,6 +25,11 @@ nav a{color:#14532d;text-decoration:none}
 .btn{display:inline-block;background:#f7b500;color:#14532d;padding:15px 26px;border-radius:999px;font-weight:900;text-decoration:none;margin:6px 6px 6px 0;box-shadow:0 6px 16px rgba(0,0,0,.25)}
 .btn.out{background:transparent;color:#fff;border:2px solid #fff}
 .btn.green{background:#14532d;color:#fff}
+.mp-form{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.mp-form input{flex:1;min-width:220px;padding:13px 16px;border:1.5px solid #ccc;border-radius:999px;font-size:16px;font-family:inherit}
+.mp-ord{border:1.5px solid #e3e3e3;border-radius:12px;padding:14px 16px;margin:10px 0;background:#fff;text-align:left}
+.mp-ord .code{font-weight:900;color:#14532d;font-size:17px}
+.mp-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e8f5e9;color:#14532d}
 .wrap{max-width:760px;margin:0 auto;padding:10px 16px 48px}
 h2{font-family:Georgia,serif;font-size:34px;color:#14532d;margin:44px 0 10px}h2 span{color:#d97706}
 p,li{font-size:17px;line-height:1.65}
@@ -55,6 +60,7 @@ footer{max-width:760px;margin:0 auto;padding:20px 16px 40px;text-align:center;co
 <a href="#resenas" data-es="Reseñas" data-en="Reviews">Reseñas</a>
 <a href="#fotos" data-es="Fotos" data-en="Photos">Fotos</a>
 <a href="#catering" data-es="Catering" data-en="Catering">Catering</a>
+<a href="#mis-pedidos" data-es="Mis pedidos" data-en="My orders">Mis pedidos</a>
 <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
 </nav></header>
 
@@ -140,6 +146,11 @@ footer{max-width:760px;margin:0 auto;padding:20px 16px 40px;text-align:center;co
 <a class="btn" href="tel:+18138311600" data-es="📞 O por teléfono: (813) 831-1600" data-en="📞 Or by phone: (813) 831-1600">📞 O por teléfono: (813) 831-1600</a>
 <p data-es="Al confirmar tu pedido recibes tu voucher en pantalla, listo para descargar, y al restaurante le llega el aviso al momento." data-en="When you place your order you get your receipt on screen, ready to download, and the restaurant is notified right away.">Al confirmar tu pedido recibes tu voucher en pantalla, listo para descargar, y al restaurante le llega el aviso al momento.</p></div>
 
+<h2 id="mis-pedidos" data-es="Mis <span>pedidos</span>" data-en="My <span>orders</span>">Mis <span>pedidos</span></h2>
+<div class="card"><p data-es="¿Ya pediste tu catering? Escribe el correo que usaste al pedir y mira tus pedidos y en qué estado van — sin salir de esta página." data-en="Already ordered your catering? Enter the email you ordered with and see your orders and their status — without leaving this page.">¿Ya pediste tu catering? Escribe el correo que usaste al pedir y mira tus pedidos y en qué estado van — sin salir de esta página.</p>
+<form class="mp-form" onsubmit="return mpBuscar(event)"><input id="mp-email" type="email" required placeholder="tu@correo.com" data-es-ph="tu@correo.com" data-en-ph="you@email.com"><button class="btn green" type="submit" data-es="Buscar mis pedidos" data-en="Find my orders">Buscar mis pedidos</button></form>
+<div id="mp-results"></div></div>
+
 <section id="contacto" class="contact"><div>
 <h2 style="margin-top:0;color:#fff" data-es="Contacto" data-en="Contact">Contacto</h2>
 <p><b>Maikel's Kitchen</b><br><span data-es="Restaurante cubano · Tampa, Florida" data-en="Cuban restaurant · Tampa, Florida">Restaurante cubano · Tampa, Florida</span><br>📍 3864 W Waters Ave, Tampa, FL 33614<br>📞 <a href="tel:+18138311600">(813) 831-1600</a></p>
@@ -151,6 +162,11 @@ footer{max-width:760px;margin:0 auto;padding:20px 16px 40px;text-align:center;co
 <script>
 var LANG='es';
 function setLang(l){LANG=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(function(e){e.innerHTML=e.getAttribute(l==='es'?'data-es':'data-en')});document.getElementById('btn-es').className=l==='es'?'on':'';document.getElementById('btn-en').className=l==='en'?'on':''}
+var MP_API='https://mesaready.onrender.com/api/pub/maikel-kitchen';
+var MP_T={es:{searching:'Buscando…',none:'No encontramos pedidos con ese correo. Revisa que sea el mismo correo con el que pediste.',error:'No se pudo consultar ahora. Inténtalo de nuevo en un momento.',status:{nuevo:'Nuevo',confirmado:'Confirmado',en_cocina:'En cocina',preparando:'En cocina',listo:'Listo para recoger',entregado:'Entregado',completado:'Completado',cancelado:'Cancelado'},total:'Total',again:'🛒 Pedir de nuevo',forDate:'Para el'},
+en:{searching:'Searching…',none:'No orders found for that email. Make sure it is the same email you ordered with.',error:'Could not load right now. Please try again in a moment.',status:{nuevo:'New',confirmado:'Confirmed',en_cocina:'In the kitchen',preparando:'In the kitchen',listo:'Ready for pickup',entregado:'Delivered',completado:'Completed',cancelado:'Cancelled'},total:'Total',again:'🛒 Order again',forDate:'For'}};
+function mpEsc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+async function mpBuscar(ev){ev.preventDefault();var em=document.getElementById('mp-email').value.trim();var box=document.getElementById('mp-results');var d=MP_T[LANG]||MP_T.es;if(!em)return false;box.innerHTML='<p>'+d.searching+'</p>';try{var r=await fetch(MP_API+'/my-orders?email='+encodeURIComponent(em));var j=await r.json();var os=j.orders||[];if(!os.length){box.innerHTML='<p>'+d.none+'</p>';return false}box.innerHTML=os.map(function(o){var items=(o.items||[]).map(function(l){return (l.qty?l.qty+' × ':'')+mpEsc(l.name)+(l.size?' ('+mpEsc(l.size)+')':'')}).join('<br>');var st=d.status[o.status]||o.status;return '<div class="mp-ord"><span class="code">'+mpEsc(o.code)+'</span> <span class="mp-badge">'+mpEsc(st)+'</span><div style="font-size:13.5px;color:#555;margin:6px 0">'+d.forDate+' '+mpEsc(o.service_date||'')+'</div><div style="font-size:14.5px">'+items+'</div><div style="margin-top:8px"><b>'+d.total+': $'+Number(o.total||0).toFixed(2)+'</b></div><a class="btn green" style="margin-top:10px" href="https://mesaready.onrender.com/catering-maikel-kitchen.html" target="_blank" rel="noopener">'+d.again+'</a></div>'}).join('')}catch(e){box.innerHTML='<p>'+d.error+'</p>'}return false}
 </script>
 </body>
 </html>
