@@ -162,7 +162,7 @@ footer{max-width:760px;margin:0 auto;padding:20px 16px 40px;text-align:center;co
 <script>
 var LANG='es';
 function setLang(l){LANG=l;document.documentElement.lang=l;document.querySelectorAll('[data-es]').forEach(function(e){e.innerHTML=e.getAttribute(l==='es'?'data-es':'data-en')});document.getElementById('btn-es').className=l==='es'?'on':'';document.getElementById('btn-en').className=l==='en'?'on':''}
-var MP_API='https://mesaready.onrender.com/api/pub/maikel-kitchen';
+var MP_API='https://mesaready.newageprosystem.com/api/pub/maikel-kitchen';
 var MP_T={es:{searching:'Buscando…',none:'No encontramos pedidos con ese correo. Revisa que sea el mismo correo con el que pediste.',error:'No se pudo consultar ahora. Inténtalo de nuevo en un momento.',status:{nuevo:'Nuevo',confirmado:'Confirmado',en_cocina:'En cocina',preparando:'En cocina',listo:'Listo para recoger',entregado:'Entregado',completado:'Completado',cancelado:'Cancelado'},total:'Total',again:'🛒 Pedir de nuevo',forDate:'Para el'},
 en:{searching:'Searching…',none:'No orders found for that email. Make sure it is the same email you ordered with.',error:'Could not load right now. Please try again in a moment.',status:{nuevo:'New',confirmado:'Confirmed',en_cocina:'In the kitchen',preparando:'In the kitchen',listo:'Ready for pickup',entregado:'Delivered',completado:'Completed',cancelado:'Cancelled'},total:'Total',again:'🛒 Order again',forDate:'For'}};
 function mpEsc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
